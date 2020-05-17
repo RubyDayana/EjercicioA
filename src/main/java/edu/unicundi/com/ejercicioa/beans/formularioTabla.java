@@ -7,6 +7,7 @@ package edu.unicundi.com.ejercicioa.beans;
 
 import edu.unicundi.com.ejercicioa.logica.CancionService;
 import edu.unicundi.com.ejercicioa.model.Cancion;
+import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
@@ -19,24 +20,24 @@ import javax.inject.Inject;
  */
 @Named(value = "formularioTabla")
 @RequestScoped
-public class formularioTabla {
+public class formularioTabla{
 
     private List<Cancion> listaCancion;
-
+    private Cancion cancion;
     
+
     @Inject
     private CancionService service;
-    
 
     @PostConstruct
     public void init() {
-        this.listaCancion = service.getListaCancion(); 
+        this.listaCancion = service.getListaCancion();
     }
 
     public formularioTabla() {
     }
-    
-    public void eliminarCancion(Cancion cancion){
+
+    public void eliminarCancion(Cancion cancion) {
         listaCancion.remove(cancion);
     }
 
@@ -47,4 +48,14 @@ public class formularioTabla {
     public void setListaCancion(List<Cancion> listaCancion) {
         this.listaCancion = listaCancion;
     }
+
+    public Cancion getCancion() {
+        return cancion;
+    }
+
+    public void setCancion(Cancion cancion) {
+        this.cancion = cancion;
+    }
+    
+    
 }

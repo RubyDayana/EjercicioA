@@ -7,13 +7,14 @@ and open the template in the editor.
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
-    
+
     <h:body>
-        <p:dataTable value="#{formularioTabla.listaCancion}" var ="cancion" >
+        <p:dataTable id="dataTable" value="#{formularioTabla.listaCancion}" var ="cancion" >
             <p:column headerText="Id">
                 <h:outputText value="#{cancion.id}" /> 
             </p:column>
@@ -35,10 +36,13 @@ and open the template in the editor.
             <p:column headerText="Precio">
                 <h:outputText value="#{cancion.precio}" /> 
             </p:column>
+
             <p:column headerText="Acciones">
-                <p:commandLink action="#{formularioTabla.eliminarCancion(cancion)}" value="Eliminar" ></p:commandLink>
+                <p:commandButton icon="ui-icon-trash" title="remove from cart"
+                       actionListener="#{formularioTabla.eliminarCancion(cancion)}" update="dataTable" />
+
             </p:column>
         </p:dataTable>
-        
+
     </h:body>
 </html>

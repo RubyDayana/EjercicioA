@@ -35,15 +35,7 @@ public class Cancion implements Serializable{
         this.formato = formato;
         this.precio = precio;
     }
-
-    
-    public Cancion(Integer id, String nombre, String duracion, String nombreArtista) {
-        this.id = id;
-        this.nombre = nombre;
-        this.duracion = duracion;
-        this.nombreArtista = nombreArtista;
-    }        
-
+     
     public Integer getId() {
         return id;
     }
@@ -99,6 +91,7 @@ public class Cancion implements Serializable{
     public void setPrecio(String precio) {
         this.precio = precio;
     }
+   
 
          
 }
