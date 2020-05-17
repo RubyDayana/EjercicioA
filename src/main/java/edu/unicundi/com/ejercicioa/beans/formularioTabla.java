@@ -23,18 +23,21 @@ public class formularioTabla {
 
     private List<Cancion> listaCancion;
 
+    
     @Inject
     private CancionService service;
-    private Cancion cancion;
+    
 
     @PostConstruct
     public void init() {
-        this.listaCancion = service.getListaCancion();
-        
-        this.service.eliminarCancion(cancion);
+        this.listaCancion = service.getListaCancion(); 
     }
 
     public formularioTabla() {
+    }
+    
+    public void eliminarCancion(Cancion cancion){
+        listaCancion.remove(cancion);
     }
 
     public List<Cancion> getListaCancion() {

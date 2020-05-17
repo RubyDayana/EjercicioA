@@ -39,8 +39,6 @@ public class CancionService {
     public void setListaCancion(List<Cancion> listaCancion) {
         this.listaCancion = listaCancion;
     }
-    public void eliminarCancion(Cancion cancion){
-        listaCancion.remove(cancion);
-    }
+    
     
 }

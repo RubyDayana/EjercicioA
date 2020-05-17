@@ -36,7 +36,7 @@ and open the template in the editor.
                 <h:outputText value="#{cancion.precio}" /> 
             </p:column>
             <p:column headerText="Acciones">
-                <p:commandLink actionListener ="#{cancionService.eliminarCancion(cancion)}" value="Eliminar" ></p:commandLink>
+                <p:commandLink action="#{formularioTabla.eliminarCancion(cancion)}" value="Eliminar" ></p:commandLink>
             </p:column>
         </p:dataTable>
         
